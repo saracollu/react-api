@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ActressCard from './components/ActressCard'
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
             <li key={actress.id}>{actress.name}</li>
           ))}
       </ul>
+
+      <ActressCard></ActressCard>
     </>
   )
 }
