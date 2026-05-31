@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function ActressCard() {
 
@@ -11,12 +11,20 @@ export default function ActressCard() {
                     setActressCard(data)
                 }))
     }
+    useEffect(getActress, []);
     return
     <>
         <div className="container">
             {
                 actressCard.map(actress => (
-                    <div className="card"></div>
+                    <div key={actress.id} className="card">
+                        <h2>{name}</h2>
+                        <span>{birth_year}</span>
+                        <span>{nationality}</span>
+                        <span>{biography}</span>
+                        <img src={image} alt="" />
+                        <span>{awards}</span>
+                    </div>
                 ))
             }
         </div>
