@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ActressCard from './components/ActressCard'
 
 
@@ -13,7 +13,8 @@ function App() {
         setActressList(data)
       })
   }
-  getList()
+
+  useEffect(() => getList, [])
 
 
   return (

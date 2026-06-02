@@ -12,22 +12,23 @@ export default function ActressCard() {
                 }))
     }
     useEffect(getActress, []);
-    return
-    <>
-        <div className="container">
-            {
-                actressCard.map(actress => (
-                    <div key={actress.id} className="card">
-                        <h2>{name}</h2>
-                        <span>{birth_year}</span>
-                        <span>{nationality}</span>
-                        <span>{biography}</span>
-                        <img src={image} alt="" />
-                        <span>{awards}</span>
-                    </div>
-                ))
-            }
-        </div>
+    return (
+        <>
+            <div className="card-container">
+                {
+                    actressCard.map(actress => (
+                        <div key={actress.id} className="card">
+                            <h2>{actress.name}</h2>
+                            <span>{actress.birth_year}</span>
+                            <span>{actress.nationality}</span>
+                            <span>{actress.biography}</span>
+                            <img src={actress.image} alt="" />
+                            <span>{actress.awards}</span>
+                        </div>
+                    ))
+                }
+            </div>
 
-    </>
+        </>
+    )
 }
